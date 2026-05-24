@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BindFirst — Win Orlando's new businesses, every Monday</title>
+  <link rel="icon" type="image/svg+xml" href="brand/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="brand/favicon-32.png" />
+  <link rel="apple-touch-icon" href="brand/favicon-180.png" />
+  <!-- OG image: switch to the absolute https://bindfirst.com/brand/og.png URL once hosted -->
+  <meta property="og:title" content="BindFirst — Win Orlando's new businesses, every Monday" />
+  <meta property="og:description" content="Every new business that registers in Orange County, FL — delivered every Monday with owner name + address. One insurance producer per county." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://bindfirst.com/brand/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://bindfirst.com/brand/og.png" />
+  <meta name="description" content="A weekly done-for-you list of brand-new Orlando-area business registrations, delivered as a clean Google Sheet every Monday. Built for local insurance producers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="BindFirst home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="30" height="30" role="img" aria-label="BindFirst logo">
+            <rect x="6" y="17" width="23" height="14" rx="7" fill="none" stroke="url(#gnav)" stroke-width="5" />
+            <rect x="19" y="17" width="23" height="14" rx="7" fill="none" stroke="url(#gnav)" stroke-width="5" />
+            <defs>
+              <linearGradient id="gnav" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0ea5e9" />
+                <stop offset="1" stop-color="#10b981" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-name">Bind<span class="g">First</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a class="btn btn-primary btn-sm" href="#capture">Get my free list</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">For Orlando insurance producers</p>
+          <h1 class="hero-title">
+            Win the new businesses in your town —
+            <span class="accent-text">before your competitors even know they exist.</span>
+          </h1>
+          <p class="hero-sub">
+            Last week, <strong>751 brand-new businesses</strong> registered right here in
+            Orange County. None of them are insured yet. We hand you the list — owner names,
+            mailing addresses, sorted by industry — fresh in your inbox <strong>every Monday morning</strong>.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="#capture">Get my free Orlando list</a>
+            <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
+          </div>
+          <ul class="trust-row" aria-label="What's included">
+            <li><span class="check" aria-hidden="true">✓</span> Free first Monday</li>
+            <li><span class="check" aria-hidden="true">✓</span> No card</li>
+            <li><span class="check" aria-hidden="true">✓</span> One producer per county</li>
+            <li><span class="check" aria-hidden="true">✓</span> Cancel anytime</li>
+          </ul>
+          <p class="hero-positioning">
+            <strong>Not another shared-lead vendor.</strong> Brand-new filings, one producer per
+            county, never resold.
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-label="Last week's Orange County sample">
+          <div class="hc-head">
+            <span class="hc-title">Orange County · this week</span>
+            <span class="hc-live"><span class="hc-dot" aria-hidden="true"></span> Live · updated weekly</span>
+          </div>
+          <div class="hc-stats">
+            <div class="hc-stat"><span class="hc-num">751</span><span class="hc-lbl">new this week</span></div>
+            <div class="hc-stat"><span class="hc-num">93%</span><span class="hc-lbl">owner + address</span></div>
+            <div class="hc-stat"><span class="hc-num">1</span><span class="hc-lbl">seat left</span></div>
+          </div>
+          <table class="hc-table">
+            <caption class="sr-only">Sample of last week's new Orange County businesses with owner last names redacted.</caption>
+            <thead><tr><th scope="col">Business</th><th scope="col">Industry</th><th scope="col">Owner</th></tr></thead>
+            <tbody>
+              <tr><td class="biz">CADELY LOGISTICS LLC</td><td><span class="tag tag-trucking">Trucking</span></td><td class="ow">Steven █████ <span class="hc-lock" aria-hidden="true">🔒</span></td></tr>
+              <tr><td class="biz">BUBBLES &amp; BLISS CLEANING</td><td><span class="tag tag-cleaning">Cleaning</span></td><td class="ow">Alexis █████ <span class="hc-lock" aria-hidden="true">🔒</span></td></tr>
+              <tr><td class="biz">SIMON CAPITAL REALTY</td><td><span class="tag tag-realestate">Real estate</span></td><td class="ow">Rachelle █████ <span class="hc-lock" aria-hidden="true">🔒</span></td></tr>
+            </tbody>
+          </table>
+          <a class="hc-foot" href="#capture">+ 748 more this week — unlock when you claim your county →</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ SAMPLE TABLE ============ -->
+    <section class="section section-sample" aria-labelledby="sample-heading">
+      <div class="container">
+        <div class="sample-card">
+          <div class="sample-head">
+            <h2 id="sample-heading" class="sample-title">Last week in Orange County</h2>
+            <p class="sample-meta">
+              <span class="pill pill-blue">751 new businesses</span>
+              <span class="pill pill-green">93% with owner + address</span>
+            </p>
+          </div>
+          <div class="table-scroll">
+            <table class="sample-table">
+              <caption class="sr-only">A sample of new business registrations from last week, with owner last names and mailing addresses redacted.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="col-num">#</th>
+                  <th scope="col">Business</th>
+                  <th scope="col">Industry</th>
+                  <th scope="col">City</th>
+                  <th scope="col">Owner</th>
+                  <th scope="col">Mailing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-num">1</td>
+                  <td class="biz">CADELY LOGISTICS LLC</td>
+                  <td><span class="tag tag-trucking">Trucking</span></td>
+                  <td>Apopka</td>
+                  <td>Steven █████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+                <tr>
+                  <td class="col-num">2</td>
+                  <td class="biz">BARRACKS DISPATCHING LLC</td>
+                  <td><span class="tag tag-trucking">Trucking</span></td>
+                  <td>Apopka</td>
+                  <td>Marvin █████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+                <tr>
+                  <td class="col-num">3</td>
+                  <td class="biz">SAID CONSTRUCTION &amp; ROOFING LLC</td>
+                  <td><span class="tag tag-construction">Construction</span></td>
+                  <td>Apopka</td>
+                  <td>Said ████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+                <tr>
+                  <td class="col-num">4</td>
+                  <td class="biz">IV ELECTRIC SERVICES LLC</td>
+                  <td><span class="tag tag-construction">Construction</span></td>
+                  <td>Apopka</td>
+                  <td>Alcides █████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+                <tr>
+                  <td class="col-num">5</td>
+                  <td class="biz">BUBBLES &amp; BLISS CLEANING LLC</td>
+                  <td><span class="tag tag-cleaning">Cleaning</span></td>
+                  <td>Apopka</td>
+                  <td>Alexis █████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+                <tr>
+                  <td class="col-num">6</td>
+                  <td class="biz">SIMON CAPITAL REALTY LLC</td>
+                  <td><span class="tag tag-realestate">Real estate</span></td>
+                  <td>Ocoee</td>
+                  <td>Rachelle █████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+                <tr>
+                  <td class="col-num">7</td>
+                  <td class="biz">ECLAT LASER MED SPA LLC</td>
+                  <td><span class="tag tag-health">Med spa</span></td>
+                  <td>Orlando</td>
+                  <td>Eugenia █████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+                <tr>
+                  <td class="col-num">8</td>
+                  <td class="biz">INDIE GOUT CREOLE RESTAURANT LLC</td>
+                  <td><span class="tag tag-food">Restaurant</span></td>
+                  <td>Orlando</td>
+                  <td>Indiana █████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+                <tr>
+                  <td class="col-num">9</td>
+                  <td class="biz">ZN GOLDEN CARE LLC</td>
+                  <td><span class="tag tag-health">Home health</span></td>
+                  <td>Apopka</td>
+                  <td>Zoila █████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+                <tr>
+                  <td class="col-num">10</td>
+                  <td class="biz">DADA EYECARE HOLDINGS LLC</td>
+                  <td><span class="tag tag-health">Health</span></td>
+                  <td>Apopka</td>
+                  <td>David ████</td>
+                  <td><span class="locked">🔒 Locked</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="sample-foot">
+            <span class="foot-plus">+ 741 more</span>
+            <span class="foot-note">— unlock when you claim your county</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STAT STRIP ============ -->
+    <section class="stat-strip" aria-label="Key numbers">
+      <div class="container stat-grid">
+        <div class="stat">
+          <span class="stat-num">751</span>
+          <span class="stat-label">new last week</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">~150</span>
+          <span class="stat-label">a day</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">93%</span>
+          <span class="stat-label">with owner + address</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">1</span>
+          <span class="stat-label">agent per county</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VERTICALS ============ -->
+    <section class="section" aria-labelledby="verticals-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-center">Fresh off the press</p>
+          <h2 id="verticals-heading" class="section-title">Here's what landed last Monday</h2>
+          <p class="section-lead">
+            Every new filing tags into an industry — so you can see exactly which policies
+            walked through the door this week.
+          </p>
+        </div>
+        <div class="vert-grid">
+          <article class="vert-card">
+            <span class="vert-count">23</span>
+            <h3 class="vert-name">Trucking</h3>
+            <p class="vert-insurance">New authorities needing commercial auto &amp; BMC-91</p>
+          </article>
+          <article class="vert-card">
+            <span class="vert-count">23</span>
+            <h3 class="vert-name">Construction</h3>
+            <p class="vert-insurance">General liability, tools &amp; equipment, work comp</p>
+          </article>
+          <article class="vert-card">
+            <span class="vert-count">21</span>
+            <h3 class="vert-name">Cleaning</h3>
+            <p class="vert-insurance">Janitorial liability &amp; bonding</p>
+          </article>
+          <article class="vert-card">
+            <span class="vert-count">21</span>
+            <h3 class="vert-name">Real estate</h3>
+            <p class="vert-insurance">E&amp;O and small commercial property</p>
+          </article>
+          <article class="vert-card">
+            <span class="vert-count">19</span>
+            <h3 class="vert-name">Health</h3>
+            <p class="vert-insurance">Professional liability &amp; medical malpractice</p>
+          </article>
+          <article class="vert-card">
+            <span class="vert-count">16</span>
+            <h3 class="vert-name">Auto</h3>
+            <p class="vert-insurance">Garage liability &amp; dealer coverage</p>
+          </article>
+          <article class="vert-card">
+            <span class="vert-count">14</span>
+            <h3 class="vert-name">Beauty</h3>
+            <p class="vert-insurance">Salon &amp; spa liability</p>
+          </article>
+          <article class="vert-card">
+            <span class="vert-count">8</span>
+            <h3 class="vert-name">Food</h3>
+            <p class="vert-insurance">Restaurant property &amp; liquor liability</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section-soft" id="how" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-center">Simple by design</p>
+          <h2 id="how-heading" class="section-title">How it works</h2>
+          <p class="section-lead">No software to learn. No portal to log into. Just a clean list, every Monday.</p>
+        </div>
+        <ol class="steps">
+          <li class="step-card">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3 class="step-title">Records update daily</h3>
+            <p class="step-body">
+              Every new business in Florida is filed as public record. We watch those
+              filings the moment they post — no guessing, no scraping the gray areas.
+            </p>
+          </li>
+          <li class="step-card">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3 class="step-title">We clean it up &amp; tag it</h3>
+            <p class="step-body">
+              We sort each filing by industry and attach the owner's name and mailing
+              address — so you're looking at real prospects, not a messy data dump.
+            </p>
+          </li>
+          <li class="step-card">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3 class="step-title">You get one simple sheet</h3>
+            <p class="step-body">
+              Every Monday at 8am ET, a tidy Google Sheet lands in your inbox — just for
+              you, no one else in your county gets the same list.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ TERRITORY ============ -->
+    <section class="section" id="territory" aria-labelledby="territory-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-center">Claim your turf</p>
+          <h2 id="territory-heading" class="section-title">Your territory</h2>
+          <p class="section-lead">
+            One insurance producer per county. When yours is taken, it's taken — so the
+            new businesses in your backyard come to you, not the agent down the street.
+          </p>
+        </div>
+        <div class="territory-grid">
+          <article class="terr-card">
+            <div class="terr-top">
+              <h3 class="terr-name">Orange</h3>
+              <span class="terr-status">1 spot · Open</span>
+            </div>
+            <p class="terr-sub">Orlando</p>
+            <p class="terr-vol">~751 <span>/wk</span></p>
+          </article>
+          <article class="terr-card">
+            <div class="terr-top">
+              <h3 class="terr-name">Seminole</h3>
+              <span class="terr-status">1 spot · Open</span>
+            </div>
+            <p class="terr-sub">Sanford &amp; Altamonte</p>
+            <p class="terr-vol">~210 <span>/wk</span></p>
+          </article>
+          <article class="terr-card">
+            <div class="terr-top">
+              <h3 class="terr-name">Osceola</h3>
+              <span class="terr-status">1 spot · Open</span>
+            </div>
+            <p class="terr-sub">Kissimmee</p>
+            <p class="terr-vol">~180 <span>/wk</span></p>
+          </article>
+          <article class="terr-card">
+            <div class="terr-top">
+              <h3 class="terr-name">Lake</h3>
+              <span class="terr-status">1 spot · Open</span>
+            </div>
+            <p class="terr-sub">Clermont</p>
+            <p class="terr-vol">~130 <span>/wk</span></p>
+          </article>
+        </div>
+        <p class="terr-foot">
+          Good to know: a banker or bookkeeper working the same county isn't competing with
+          you for these leads — exclusivity is per <em>insurance producer</em>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section section-soft" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-center">Honest, month-to-month pricing</p>
+          <h2 id="pricing-heading" class="section-title">Pick the feed that fits you</h2>
+          <p class="section-lead">Cancel anytime. No contracts, no setup fees, no surprises.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card featured">
+            <span class="price-badge">Most popular</span>
+            <h3 class="price-name">Full commercial feed</h3>
+            <p class="price-amount"><span class="price-currency">$</span>249<span class="price-period">/mo</span></p>
+            <p class="price-tagline">Every new Orange County business — about 150 a week.</p>
+            <ul class="price-features">
+              <li>Every new business in your county (~150/wk)</li>
+              <li>Sorted by ZIP &amp; industry</li>
+              <li>Owner name + mailing address</li>
+              <li>Delivered Monday 8am ET</li>
+              <li>Exclusive to one insurance producer per county</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="#capture">Get my free Orlando list</a>
+          </article>
+          <article class="price-card">
+            <h3 class="price-name">Trucking-only feed</h3>
+            <p class="price-amount"><span class="price-currency">$</span>199<span class="price-period">/mo</span></p>
+            <p class="price-tagline">Just the new authorities — about 23 a week.</p>
+            <ul class="price-features">
+              <li>~23 new trucking &amp; logistics LLCs/wk</li>
+              <li>New authorities needing commercial auto</li>
+              <li>Flagged for BMC-91 filing needs</li>
+              <li>Owner name + mailing address</li>
+              <li>Delivered Monday 8am ET</li>
+            </ul>
+            <a class="btn btn-outline btn-block" href="#capture">Start with trucking</a>
+          </article>
+        </div>
+        <p class="founding-note">
+          <span class="founding-star" aria-hidden="true">★</span>
+          <strong>Founding-member lifetime lock:</strong> the first 5 producers keep their
+          rate for life — even when the full feed rises to $399. Your first Monday send is free.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ WHY DIFFERENT ============ -->
+    <section class="section" id="why" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-center">No more burned lists</p>
+          <h2 id="why-heading" class="section-title">Why we're not like other lead lists</h2>
+          <p class="section-lead">
+            If you've been let down by lead vendors before, here's what's different about us.
+          </p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card">
+            <span class="why-icon" aria-hidden="true">🌱</span>
+            <h3 class="why-title">Never recycled</h3>
+            <p class="why-body">
+              These are brand-new filings — businesses that registered last week. No tired
+              list that's been sold to ten other agents first.
+            </p>
+          </article>
+          <article class="why-card">
+            <span class="why-icon" aria-hidden="true">🤝</span>
+            <h3 class="why-title">Just for you</h3>
+            <p class="why-body">
+              One insurance producer per county. When you claim yours, your list is yours
+              alone — nobody else gets the same names.
+            </p>
+          </article>
+          <article class="why-card">
+            <span class="why-icon" aria-hidden="true">📜</span>
+            <h3 class="why-title">100% public records</h3>
+            <p class="why-body">
+              Everything comes straight from official Florida state filings. You reach out
+              your own way, on your own terms.
+            </p>
+          </article>
+          <article class="why-card">
+            <span class="why-icon" aria-hidden="true">🎁</span>
+            <h3 class="why-title">Try it free first</h3>
+            <p class="why-body">
+              Your first Monday list is on us. See the quality before you ever pay a dime,
+              then stay month-to-month.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section-soft" id="faq" aria-labelledby="faq-heading">
+      <div class="container container-narrow">
+        <div class="section-head">
+          <h2 id="faq-heading" class="section-title">Questions, answered</h2>
+          <p class="section-lead">Straight answers — no fine-print games.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Where does this data come from?</summary>
+            <div class="faq-answer">
+              <p>
+                Every row comes from the Florida Department of State, Division of
+                Corporations — the official public record of new business registrations.
+                We watch those filings daily and hand you the freshest ones, cleaned up
+                and tagged by industry.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Is this legal? It feels almost too good.</summary>
+            <div class="faq-answer">
+              <p>
+                Yes. This is public-record business data that anyone can request — we just
+                do the daily legwork for you. You run your own outreach your own way. We
+                never autodial or text personal cell numbers, and the data is about
+                businesses, not consumer credit.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>How fresh is each Monday's list?</summary>
+            <div class="faq-answer">
+              <p>
+                Very. The records update daily, and your sheet covers the businesses that
+                registered the prior week. Last week there were 751 new businesses in
+                Orange County — roughly 150 every business day — so there's always a fresh
+                batch waiting for you on Monday morning.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>What's actually in each row?</summary>
+            <div class="faq-answer">
+              <p>
+                The business name, its industry, the city, the owner's name, and the
+                mailing address. About 93% of rows include a real owner name and mailing
+                address — the rest are brand-new filings still finalizing their paperwork.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I cancel whenever I want?</summary>
+            <div class="faq-answer">
+              <p>
+                Absolutely. It's month-to-month — cancel anytime, no penalty, no awkward
+                phone call. And if you're one of the first 5 founding members, your rate is
+                locked for life for as long as you stay.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>What happens if my county is already taken?</summary>
+            <div class="faq-answer">
+              <p>
+                Because we only work with one insurance producer per county, that territory
+                closes once it's claimed. If yours is already spoken for, we'll let you know
+                and add you to the waitlist for the moment it opens back up. Neighboring
+                counties like Seminole, Osceola, and Lake may still be open.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAPTURE CTA ============ -->
+    <section class="capture" id="capture" aria-labelledby="capture-heading">
+      <div class="container container-narrow">
+        <div class="capture-card">
+          <p class="eyebrow eyebrow-center">Free first Monday · no card</p>
+          <h2 id="capture-heading" class="capture-title">Send me my free Orlando list</h2>
+          <p class="capture-lead">
+            Tell us your county and where to send it. You'll get your first Monday sheet on
+            the house — see the quality for yourself before you decide anything.
+          </p>
+
+          <!-- TODO: wire this form to Formspree (action="https://formspree.io/f/XXXX") or Tally before launch -->
+          <form class="capture-form" id="leadForm" novalidate>
+            <div class="field">
+              <label for="email">Your email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@youragency.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="county">Your county</label>
+              <select id="county" name="county" required>
+                <option value="" disabled selected>Choose your county…</option>
+                <option value="Orange">Orange (Orlando) — Open</option>
+                <option value="Seminole">Seminole (Sanford) — Open</option>
+                <option value="Osceola">Osceola (Kissimmee) — Open</option>
+                <option value="Lake">Lake (Clermont) — Open</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Send my free sheet</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+
+          <p class="capture-fine">
+            We'll only email you about your free list and your feed. One-click unsubscribe
+            in every email. We never share or sell your information.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="26" height="26" role="img" aria-label="BindFirst logo">
+            <rect x="6" y="17" width="23" height="14" rx="7" fill="none" stroke="url(#gfoot)" stroke-width="5" />
+            <rect x="19" y="17" width="23" height="14" rx="7" fill="none" stroke="url(#gfoot)" stroke-width="5" />
+            <defs>
+              <linearGradient id="gfoot" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0ea5e9" />
+                <stop offset="1" stop-color="#10b981" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-name">Bind<span class="g">First</span></span>
+      </div>
+      <p class="footer-contact">
+        BindFirst · Dedham, Maine · (207) 266-6118
+      </p>
+      <p class="footer-data">
+        Data: FL Dept. of State, Division of Corporations (public records)
+      </p>
+      <p class="footer-data" style="opacity:.75">
+        Public-record business data. Not for FCRA-regulated decisions (credit, employment, insurance underwriting, or tenancy).
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('leadForm');
+      var status = document.getElementById('formStatus');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('email');
+        var county = document.getElementById('county');
+        if (!email.value || email.validity.typeMismatch || !email.validity.valid) {
+          status.textContent = 'Please enter a valid email so we know where to send it.';
+          status.className = 'form-status is-error';
+          email.focus();
+          return;
+        }
+        if (!county.value) {
+          status.textContent = 'Pick your county so we send the right list.';
+          status.className = 'form-status is-error';
+          county.focus();
+          return;
+        }
+        var subject = encodeURIComponent('BindFirst — free sample request (' + county.value + ' County)');
+        var body = encodeURIComponent('Email: ' + email.value + '\nCounty: ' + county.value + "\n\nSend me last week's free sample list.");
+        window.location.href = 'mailto:nate@sproultech.com?subject=' + subject + '&body=' + body;
+        status.textContent =
+          'Opening your email to request the free ' + county.value + ' County sample — just hit send.';
+        status.className = 'form-status is-success';
+        form.querySelector('button[type="submit"]').disabled = true;
+      });
+    })();
+  </script>
+</body>
+</html>

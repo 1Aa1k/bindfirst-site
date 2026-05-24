@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="BindFirst">
+  <defs>
+    <linearGradient id="bf" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5e9"/><stop offset="1" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="16" width="25" height="16" rx="8" fill="none" stroke="url(#bf)" stroke-width="6.5"/>
+  <rect x="20" y="16" width="25" height="16" rx="8" fill="none" stroke="url(#bf)" stroke-width="6.5"/>
+</svg>
