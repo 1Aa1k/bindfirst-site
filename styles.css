@@ -315,7 +315,12 @@ summary:focus-visible {
 .trust-row li { display: inline-flex; align-items: center; gap: 0.45rem; }
 .trust-row .check {
   display: inline-grid; place-items: center; width: 1.2rem; height: 1.2rem;
-  background: var(--emerald); color: #fff; border-radius: 50%; font-size: 0.72rem; font-weight: 800;
+  background: var(--emerald); color: #fff; border-radius: 50%;
+}
+.trust-row .check::after {
+  content: ""; width: 0.34rem; height: 0.2rem;
+  border-left: 2px solid #fff; border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translateY(-0.04rem);
 }
 .hero-positioning {
   margin: 1.15rem 0 0; font-size: 0.95rem; color: var(--ink-soft);
