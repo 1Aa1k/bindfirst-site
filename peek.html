@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BindFirst — Peek at your county's new businesses</title>
+<meta name="description" content="See how many brand-new businesses just registered in your county this week — exclusive weekly leads, before anyone else." />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{ --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --cyan:#0ea5e9; --emer:#10b981; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:#f6f9fc;-webkit-font-smoothing:antialiased;}
+  .hero{background:linear-gradient(120deg,#0b1220,#0f2942 55%,#0a3d3a);color:#fff;padding:48px 24px 40px;text-align:center;}
+  .brand{font-weight:800;font-size:20px;margin-bottom:22px;}
+  .brand span{background:linear-gradient(90deg,var(--cyan),var(--emer));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero h1{font-size:clamp(26px,4.5vw,40px);font-weight:800;line-height:1.15;max-width:760px;margin:0 auto;}
+  .hero p{color:#cbd5e1;margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.6;}
+  .wrap{max-width:920px;margin:-26px auto 0;padding:0 20px 60px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 8px 28px rgba(15,23,42,.06);}
+  .card .county{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--emer);}
+  .card .big{font-family:'Plus Jakarta Sans';font-size:46px;font-weight:800;line-height:1;margin:8px 0 2px;
+    background:linear-gradient(135deg,var(--cyan),var(--emer));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .card .lbl{font-size:13px;color:var(--muted);}
+  .card .sub{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);}
+  .card .sub b{color:var(--ink);}
+  .card a{display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--cyan),var(--emer));color:#fff;
+    text-decoration:none;font-weight:700;font-size:14px;padding:10px 18px;border-radius:10px;}
+  .note{text-align:center;color:var(--muted);font-size:13px;margin-top:22px;}
+  .foot{text-align:center;color:#94a3b8;font-size:12.5px;padding:24px;}
+  .loading{text-align:center;color:var(--muted);padding:40px;}
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="brand">Bind<span>First</span></div>
+    <h1>Every brand-new business in your county — before anyone else has them.</h1>
+    <p>Here's what filed <b>this week</b>. Real operating businesses, cleaned and ready, owner contact attached. One buyer per category, per county.</p>
+  </div>
+  <div class="wrap">
+    <div id="grid" class="grid"><div class="loading">Loading this week's numbers…</div></div>
+    <p class="note">Updated every Monday. Counts only — the businesses themselves are exclusive to members.</p>
+  </div>
+  <div class="foot">BindFirst · one producer per county, never resold · <a href="/" style="color:#0ea5e9;text-decoration:none;">bindfirst.com</a></div>
+
+<script>
+  const SUPA = "https://ldhziqeyubbezazbmjsr.supabase.co";
+  const ANON = "sb_publishable_fYMAkUxgjZ43lcN0-aIICg_5PIxMVNV";
+  const CTA = "mailto:nate@sproultech.com?subject=" + encodeURIComponent("Claim my county on BindFirst");
+  fetch(SUPA + "/rest/v1/rpc/public_county_stats", {
+    method: "POST", headers: { apikey: ANON, "Content-Type": "application/json" }, body: "{}"
+  }).then(r => r.json()).then(rows => {
+    const grid = document.getElementById("grid");
+    if (!Array.isArray(rows) || !rows.length) { grid.innerHTML = '<div class="loading">Check back Monday.</div>'; return; }
+    grid.innerHTML = rows.map(r => `
+      <div class="card">
+        <div class="county">${r.county} County</div>
+        <div class="big">${Number(r.new_this_week).toLocaleString()}</div>
+        <div class="lbl">new businesses this week</div>
+        <div class="sub"><b>${Number(r.total_operating).toLocaleString()}</b> operating businesses on file · most common: <b>${r.top_industry || "—"}</b></div>
+        <a href="${CTA}">Claim ${r.county} County →</a>
+      </div>`).join("");
+  }).catch(() => {
+    document.getElementById("grid").innerHTML = '<div class="loading">Couldn\'t load right now — email nate@sproultech.com to claim your county.</div>';
+  });
+</script>
+</body>
+</html>
